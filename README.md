@@ -70,7 +70,7 @@ Display as a slideshow.
 
 ### Embed
 
-Insertion of the [https://adno.app](https://adno.app/) player.
+Insertion of the [Adno](https://adno.app/) player.
 
 | Attribute | Description | Default |
 |-----------|-------------|---------|
@@ -80,7 +80,7 @@ Insertion of the [https://adno.app](https://adno.app/) player.
 | data-height | height of the embed (in pixels) | 600px |
 | data-fullscreen | allow fullscreen `true` or `false` | true |
 
-[https://adno.app](https://adno.app/) directly provides a procedure to generate an iframe without using Adno views tags. 
+[Adno](https://adno.app/) directly provides a procedure to generate an iframe without using Adno views tags. 
 
 ```
 <iframe
