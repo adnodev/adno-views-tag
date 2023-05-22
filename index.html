@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Adno display tags - "Siège de Poitiers par Coligny", tableau de Nautré</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
+	</head>
+	<body>
+		<main class="container">
+			<h1>Adno project views</h1>
+			<p>Different ways of displaying the same <a href="https://adno.app/fr/">adno</a> project.</p>
+
+			<h2>Infos</h2>
+			<div data-adno="infos" 
+			     data-src="https://static.emf.fr/adno/embed/annotations.json"
+			     data-title-level="h4" 
+			     ></div>
+			
+			<div data-adno="slider" 
+			     data-src="https://static.emf.fr/adno/embed/annotations.json"
+			     data-style="normal" 
+			     ></div>
+			
+			<div data-adno="list" 
+			     data-src="https://static.emf.fr/adno/embed/annotations.json"
+			     data-image-max-height="600px"
+			     data-image-max-width="600px"
+			     ></div>
+
+			<div data-adno="embed" 
+			     data-src="https://static.emf.fr/adno/embed/annotations.json"
+			     data-height="600px"
+			     data-width="100%"
+			     data-fullscreen="true"
+			     ></div>
+
+		</main>
+		<script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+		<script src="jquery.shortslider.min.js"></script>
+		<script src="adno-display-tags.js"></script>
+	</body>
+</html>
+
