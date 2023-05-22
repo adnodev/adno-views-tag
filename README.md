@@ -15,7 +15,7 @@ Example:
 ></div>
 ```
 
-See `index.html` page.
+See this [demo](https://static.emf.fr/adno/views/) or `index.html` page of this repo.
 
 ## Installation
 
