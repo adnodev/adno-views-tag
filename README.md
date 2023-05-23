@@ -4,7 +4,7 @@
 
 An [Adno](https://adno.app/) project is simply a json file in [W3C Web Annotation model](https://www.w3.org/TR/annotation-model/) format. It can therefore be processed by [Adno](https://adno.app/) and by any other compatible software. Adno views tags allows you to embed different types of visualization in your web pages.
 
-Warning: Adno only works with Adno projects based on [IIIF](https://iiif.io/) resources.
+Warning: This script only works with Adno projects based on [IIIF](https://iiif.io/) resources.
 
 Example: 
 
