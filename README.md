@@ -121,7 +121,7 @@ Only `data-adno` and `data-src` are mandatory.
 
 ## Styling
 
-The html produced is generic. You can style it by adding a style tag or a link to a custom stylesheet in the header. You can also use a [minimal css library](https://github.com/dohliam/dropin-minimal-css) ([MVP.css](https://andybrewer.github.io/mvp/) for example) as a base and override it with your own styles.
+The html produced is generic. You can style it by adding a style tag or a link to a custom stylesheet in the header. You can also use a [minimal css library](https://github.com/dohliam/dropin-minimal-css) ([Classless](https://classless.de/) for example) as a base and override it with your own styles.
 
 ## References 
 
