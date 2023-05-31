@@ -147,6 +147,7 @@ function adnoAnnonaStoryboard(obj) {
 	const url = $(obj).attr('data-src');
 	$.getJSON(url).done(function(data){
 		const annotations = data.first.items;
+		for (annotation in annotations) delete annotations[annotation]["body"].splice(0,1); 
 		const json = JSON.stringify(annotations);
 		const script = '<script type="application/json" id="gr1b4nhz2mkvmfs33p9mke">'+json+'</script>';
 		const storyboard = '<iiif-storyboard annotationurl="gr1b4nhz2mkvmfs33p9mke"></iiif-storyboard>';
