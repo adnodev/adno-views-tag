@@ -23,6 +23,7 @@ Dependencies:
 
 - [jQuery](https://jquery.com/)
 - [Short slider](https://www.jqueryscript.net/slider/Generic-Slider-Carousel-Plugin-with-jQuery-Short-Slider.html) for slider tag only.
+- [Annona Library](https://ncsu-libraries.github.io/annona/) for annona tag only.
 
 Insert just before the `<body>` tag.
 
@@ -44,6 +45,8 @@ Display the project metadata.
 | data-src | project url  | |
 | data-title-level | level of the title h1 ... h3  | h3 |
 
+Only `data-adno` and `data-src` are mandatory.
+
 ### List
 
 Display in list of images of annotated areas and annotations in captions.
@@ -55,6 +58,7 @@ Display in list of images of annotated areas and annotations in captions.
 | data-image-max-width | maximum image width (in pixels) | 600px |
 | data-image-max-height | maximum image height (in pixels) | 600px |
 
+Only `data-adno` and `data-src` are mandatory.
 
 ### Slider
 
@@ -68,6 +72,8 @@ Display as a slideshow.
 | data-width | width of slider (in pixels) | 800px |
 | data-text-width | width of text (in pixels) | 600px |
 
+Only `data-adno` and `data-src` are mandatory.
+
 ### Embed
 
 Insertion of the [Adno](https://adno.app/) player.
@@ -79,6 +85,15 @@ Insertion of the [Adno](https://adno.app/) player.
 | data-width | width of the embed (in percentage or pixels) | 100% |
 | data-height | height of the embed (in pixels) | 600px |
 | data-fullscreen | allow fullscreen `true` or `false` | true |
+| data-delay | min = 1 and max = 20 (seconds) | |
+| data-navigator | `true` or `false` | |
+| data-toolbarsfs | `true` or `false` | |
+| data-startfirst | `true` or `false` | |
+| data-rotation | `true` or `false` | |
+| data-toolbar | `true` or `false` | |
+| data-bounds | `true` or `false` | |
+
+Only `data-adno` and `data-src` are mandatory.
 
 [Adno](https://adno.app/) directly provides a procedure to generate an iframe without using Adno views tags. 
 
@@ -90,6 +105,19 @@ Insertion of the [Adno](https://adno.app/) player.
     allow="fullscreen"
 ></iframe>
 ```
+
+### Annona
+
+Using the [Annona library](https://ncsu-libraries.github.io/annona/). 
+
+| Attribute | Description | Default |
+|-----------|-------------|---------|
+| data-adno | value: `annona` | |
+| data-src | project url | |
+
+Only `data-adno` and `data-src` are mandatory.
+
+
 
 ## Styling
 

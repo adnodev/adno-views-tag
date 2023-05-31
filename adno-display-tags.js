@@ -9,6 +9,7 @@ elements.each(function() {
 		case 'infos': adnoInfos(this); break;
 		case 'list': adnoList(this); break;
 		case 'slider': adnoSlider(this); break;
+		case 'annona': adnoAnnonaStoryboard(this); break;
 		default: console.log(`Unknown object type`);
 	}
 });
@@ -19,9 +20,39 @@ function adnoEmbed(obj) {
 		const height = $(obj).attr('data-height') || '500px';
 		const width = $(obj).attr('data-width') || "100%";
 		const allow = $(obj).attr('data-fullscreen') === 'true' ? 'allow="fullscreen"' : '' ;
+		let options = "";
+		let match = /true|false/;
+		if ($(obj).attr('data-delay') !== undefined) {
+			options += '&delay=' + $(obj).attr('data-delay');
+		}
+		if ($(obj).attr('data-navigator') !== undefined) {
+			let navigator = $(obj).attr('data-navigator'); 
+			options += match.test(navigator) ? '&navigator=' + navigator : "";
+		}
+		if ($(obj).attr('data-toolbar') !== undefined) {
+			let toolbar = $(obj).attr('data-toolbar');
+			options += match.test(toolbar) ? '&toolbar=' + toolbar : ""; 
+		}
+		if ($(obj).attr('data-toolbarsfs') !== undefined) {
+			let toolbarsfs = $(obj).attr('data-toolbarsfs'); 
+			options += match.test(toolbarsfs) ? '&toolbarsfs=' + toolbarsfs : "";
+		}
+		if ($(obj).attr('data-startfirst') !== undefined) {
+			let startfirst = $(obj).attr('data-startfirst');
+			options += match.test(startfirst) ? '&startfirst=' + startfirst : "";
+		}
+		if ($(obj).attr('data-rotation') !== undefined) {
+			let rotation = $(obj).attr('data-rotation');
+			options += match.test(rotation) ? '&rotation=' + rotation : ""; 
+		}
+		if ($(obj).attr('data-bounds') !== undefined) {
+			let anno_bounds = $(obj).attr('data-bounds');
+			options += match.test(anno_bounds) ? '&anno_bounds=' + anno_bounds : ""; 
+		}
+
 		html_start = '<iframe class="adno-embed" src="https://w.adno.app/#/embed?url=';
 		html_end = '" height="' + height + '" width="' + width + '" ' + allow + '></iframe>';	
-		let html =  html_start + url + html_end; 
+		let html =  html_start + url + options + html_end; 
 		$(obj).html(html);
 	}
 }
@@ -112,3 +143,14 @@ function adnoSlider(obj) {
 	});
 }
 
+function adnoAnnonaStoryboard(obj) {
+	const url = $(obj).attr('data-src');
+	$.getJSON(url).done(function(data){
+		const annotations = data.first.items;
+		const json = JSON.stringify(annotations);
+		const script = '<script type="application/json" id="gr1b4nhz2mkvmfs33p9mke">'+json+'</script>';
+		const storyboard = '<iiif-storyboard annotationurl="gr1b4nhz2mkvmfs33p9mke"></iiif-storyboard>';
+		let html = script + storyboard;
+		$(obj).html(html);
+	})		
+}
