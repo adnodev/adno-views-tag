@@ -149,8 +149,9 @@ function adnoAnnonaStoryboard(obj) {
 		const annotations = data.first.items;
 		for (annotation in annotations) delete annotations[annotation]["body"].splice(0,1); 
 		const json = JSON.stringify(annotations);
-		const script = '<script type="application/json" id="gr1b4nhz2mkvmfs33p9mke">'+json+'</script>';
-		const storyboard = '<iiif-storyboard annotationurl="gr1b4nhz2mkvmfs33p9mke"></iiif-storyboard>';
+		const uuid = Math.random().toString(36).slice(-6);
+		const script = '<script type="application/json" id="' + uuid + '">' + json + '</script>';
+		const storyboard = '<iiif-storyboard annotationurl="' + uuid + '"></iiif-storyboard>';
 		let html = script + storyboard;
 		$(obj).html(html);
 	})		
