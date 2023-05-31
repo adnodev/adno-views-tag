@@ -149,9 +149,17 @@ function adnoAnnonaStoryboard(obj) {
 		const annotations = data.first.items;
 		for (annotation in annotations) delete annotations[annotation]["body"].splice(0,1); 
 		const json = JSON.stringify(annotations);
+		let options = "";
+		$.each($(obj).get(0).attributes, function(index, attribute) {
+			if (attribute.name.startsWith('data-option-')) {
+				const option = attribute.name.substring('data-option-'.length);
+				const value = $(obj).attr(attribute.name);
+				options += option + ': ' + value + '; ';
+			}
+		});
 		const uuid = Math.random().toString(36).slice(-6);
 		const script = '<script type="application/json" id="' + uuid + '">' + json + '</script>';
-		const storyboard = '<iiif-storyboard annotationurl="' + uuid + '"></iiif-storyboard>';
+		const storyboard = '<iiif-storyboard annotationurl="' + uuid + '" styling="' + options + '"></iiif-storyboard>';
 		let html = script + storyboard;
 		$(obj).html(html);
 	})		
