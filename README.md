@@ -57,7 +57,7 @@ Display in list of images of annotated areas and annotations in captions.
 | data-src | project url | |
 | data-image-max-width | maximum image width (in pixels) | 600px |
 | data-image-max-height | maximum image height (in pixels) | 600px |
-| data-caption-position | value: `top`, `right`, `bottom`, `left`, `none` | `right` |
+| data-caption-position | value: `top`, `right`, `bottom`, `left`, `none` | `bottom` |
 
 Only `data-adno` and `data-src` are mandatory.
 
