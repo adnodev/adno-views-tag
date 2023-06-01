@@ -82,16 +82,25 @@ function adnoList(obj) {
 	const url = $(obj).attr('data-src');
 	const height = $(obj).attr('data-image-max-height') || '600px';
 	const width = $(obj).attr('data-image-max-width') || "600px";
+	const position = $(obj).attr('data-caption-position') || "bottom";
 	$.getJSON(url).done(function(data){
 		const hp = parseInt(height.replace('px',''));
 		const wp = parseInt(width.replace('px',''));
-		const html_start = '<figure  class="adno-list">';
-		const html_end = '</figure>';
+		let row = "";
+		let col = "";
+		if (position === "right" || position === "left") {
+			row = ' class="row" ';
+			col = ' class="col" ';
+		}
+		const html_start = '<div  class="adno-list">';
+		const html_end = '</div>';
 		let html = '<div class="adno-list">';
 		const annotations = data.first.items;
 		for (annotation in annotations) {
+			const fig_start = '<figure ' + row + '>';
+			const fig_end = '</figure>';
 			const text = annotations[annotation]["body"][1]["value"];
-			const value = '<figcaption>' + text + '</figcaption>';
+			const caption = '<figcaption ' + col + '>' + text + '</figcaption>';
 			const source = annotations[annotation]["target"]["source"];
 			const select = annotations[annotation]["target"]["selector"]["value"];
 			const iiif = select.slice(11);
@@ -102,9 +111,16 @@ function adnoList(obj) {
 			const ht = (hi < hp) ?  hi : hp;
 			const output = ( wt >= ht ) ? wt + "px," : "," + ht + "px" ;  
 			const image = '<img src="' + source + '/' + iiif + '/' + output + '/0/default.jpg" />';
-			html += html_start + image + value + html_end;
-		};
-		html += '</div>';
+			switch(position) {
+				case 'none': html += fig_start + image + fig_end; break;
+				case 'top': html += fig_start + caption + image + fig_end; break;
+				case 'left': html += fig_start + caption + image + fig_end; break;
+				case 'right': html += fig_start + image + caption + fig_end; break;
+				case 'bottom': html += fig_start + image + caption + fig_end; break;
+				default: html += fig_start + image + caption + fig_end;
+			}
+		}
+		html += html_end;
 		$(obj).html(html);
 	});
 }
