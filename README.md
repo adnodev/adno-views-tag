@@ -19,19 +19,45 @@ See this [demo](https://static.emf.fr/adno/views/) or `index.html` page of this 
 
 ## Installation
 
-Dependencies:
-
-- [jQuery](https://jquery.com/)
-- [Short slider](https://www.jqueryscript.net/slider/Generic-Slider-Carousel-Plugin-with-jQuery-Short-Slider.html) for slider tag only.
-- [Annona Library](https://ncsu-libraries.github.io/annona/) for annona tag only.
-
-Insert just before the `<body>` tag.
+For minimal installation, insert just before the closing tag `</body>` of your page:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
-<script src="jquery.shortslider.min.js"></script>
 <script src="adno-display-tags.js"></script>
 ```
+
+You can also add [Classless](https://classless.de/) inside your page header for a more attractive layout
+and to access some options.
+
+```html
+<link rel="stylesheet" href="https://classless.de/classless-tiny.css">
+```
+
+If you want to use the slider, you have to add the following line:
+
+```html
+<script src="jquery.shortslider.min.js" defer></script>
+```
+
+If you want the power of [Annona]((https://ncsu-libraries.github.io/annona/)) then you need to add:
+
+```html
+ <script src="https://ncsu-libraries.github.io/annona/dist/annona.js" defer></script>
+```
+
+and this link before the closing tag `</head>`:
+
+```html
+<link rel="stylesheet" type="text/css" href="https://ncsu-libraries.github.io/annona/dist/annona.css">
+```
+
+Dependencies:
+
+- [jQuery](https://jquery.com/)
+- [Classless](https://classless.de/) for better rendering, optional.
+- [Short slider](https://www.jqueryscript.net/slider/Generic-Slider-Carousel-Plugin-with-jQuery-Short-Slider.html) for slider tag only.
+- [Annona Library](https://ncsu-libraries.github.io/annona/) for annona tag only.
+
 
 ## Views
 
