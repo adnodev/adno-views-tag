@@ -150,17 +150,37 @@ function adnoAnnonaStoryboard(obj) {
 		for (annotation in annotations) delete annotations[annotation]["body"].splice(0,1); 
 		const json = JSON.stringify(annotations);
 		let options = "";
+		const uuid = Math.random().toString(36).slice(-6);
+		let infos = "";
+		if ($(obj).attr('data-infos') === "true") {
+			let text = "" ;
+			if (data.description !== "") text += '<p class="description">' + data.description + '</p>';
+			if ((data.creator !== "") || (data.editor !== "") || (data.rights !== "")) {
+				text += '<p class="credit">';
+				if (data.creator !== "") text += '<span class="creator">' + data.creator + '</span> ' ;
+				if (data.editor !== "") text += '<span class="editor">' + data.editor + '</span> ' ;
+				if (data.rights !== "") text += '<span class="rights">' + data.rights + '</span>' ;
+				text += '</p>';
+			}
+			infos = '<div id="INFOS' + uuid + '" title="' + data.title + '">' + text + '</div>';
+			options += ' "additionalinfo": "INFOS' + uuid + '",';
+		}
+
 		$.each($(obj).get(0).attributes, function(index, attribute) {
 			if (attribute.name.startsWith('data-option-')) {
 				const option = attribute.name.substring('data-option-'.length);
-				const value = $(obj).attr(attribute.name);
-				options += option + ': ' + value + '; ';
+				let value = $(obj).attr(attribute.name);
+				if (value !== 'true' || value !== 'false' || isNaN(parseFloat(value))) {
+					value = '"' + value + '"';
+				}
+				options += ' "' + option + '": ' + value + ',';
 			}
 		});
-		const uuid = Math.random().toString(36).slice(-6);
-		const script = '<script type="application/json" id="' + uuid + '">' + json + '</script>';
-		const storyboard = '<iiif-storyboard annotationurl="' + uuid + '" styling="' + options + '"></iiif-storyboard>';
-		let html = script + storyboard;
+		options = options.slice(0, -1);
+		const config = '<script id="config" type="application/json">{' + options + '}</script>';	
+		const script = '<script type="application/json" id="ITEMS' + uuid + '">' + json + '</script>';
+		const storyboard = '<iiif-storyboard annotationurl="ITEMS' + uuid + '"></iiif-storyboard>';
+		let html = infos + config + script + storyboard;
 		$(obj).html(html);
 	})		
 }

@@ -114,6 +114,7 @@ Using the [Annona library](https://ncsu-libraries.github.io/annona/).
 |-----------|-------------|---------|
 | data-adno | value: `annona` | |
 | data-src | project url | |
+| data-infos | inject project infos in Annona viewer (buttom `i`) | |
 | data-option-* | wildcard `*` is an [option of Annona](https://ncsu-libraries.github.io/annona/storyboard/#settings) | Cf. [Annona settings](https://ncsu-libraries.github.io/annona/storyboard/#settings) |  
 
 Only `data-adno` and `data-src` are mandatory.
