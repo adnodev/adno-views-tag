@@ -153,7 +153,7 @@ Beware: specific Annona options `data-option-*` have not been extensively tested
 
 The html produced is generic. So, you can style it by adding a style tag or a link to a custom stylesheet in the header. 
 
-You can also use a [minimal css library](https://github.com/dohliam/dropin-minimal-css) ([Classless](https://classless.de/) for example) or [Bootstrap](https://getbootstrap.com/) as a base and override it with your own styles. 
+You can use a [lightweight css library](https://github.com/troxler/awesome-css-frameworks), [Classless](https://classless.de/) or [Chota](https://jenil.github.io/chota/) for example, or also [Bootstrap](https://getbootstrap.com/) as a base and override it with your own styles. 
 
 ## References 
 
