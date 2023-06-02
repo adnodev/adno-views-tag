@@ -54,8 +54,8 @@ Dependencies:
 
 - [jQuery](https://jquery.com/)
 - [Classless](https://classless.de/) for better rendering, optional.
-- [Short slider](https://www.jqueryscript.net/slider/Generic-Slider-Carousel-Plugin-with-jQuery-Short-Slider.html) for slider tag only.
-- [Annona Library](https://ncsu-libraries.github.io/annona/) for annona tag only.
+- [Short slider](https://www.jqueryscript.net/slider/Generic-Slider-Carousel-Plugin-with-jQuery-Short-Slider.html) for slider tag only, optional.
+- [Annona Library](https://ncsu-libraries.github.io/annona/) for annona tag only, optional.
 
 
 ## Views
