@@ -44,7 +44,7 @@ If you want the power of [Annona]((https://ncsu-libraries.github.io/annona/)) th
  <script src="https://ncsu-libraries.github.io/annona/dist/annona.js" defer></script>
 ```
 
-and the stylesheet link preferably in the header, before the closing tag `</head>`, but you can also insert it in the body, after the `<body>` tag.
+and the stylesheet link preferably in the header, before the closing tag `</head>`, but you can also insert it in the body, after the `<body>` tag (not recommended).
 
 ```html
 <link rel="stylesheet" type="text/css" href="https://ncsu-libraries.github.io/annona/dist/annona.css">
