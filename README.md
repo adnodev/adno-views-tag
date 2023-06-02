@@ -26,8 +26,7 @@ For minimal installation, insert just before the closing tag `</body>` of your p
 <script src="adno-display-tags.js"></script>
 ```
 
-You can also add [Classless](https://classless.de/) inside your page header for a more attractive layout
-and to access some options.
+You can also add [Classless](https://classless.de/) or [Bootstrap](https://getbootstrap.com/) CSS framewok for a more attractive layout and to access some options.
 
 ```html
 <link rel="stylesheet" href="https://classless.de/classless-tiny.css">
@@ -152,7 +151,9 @@ Beware: specific Annona options `data-option-*` have not been extensively tested
 
 ## Styling
 
-The html produced is generic. You can style it by adding a style tag or a link to a custom stylesheet in the header. You can also use a [minimal css library](https://github.com/dohliam/dropin-minimal-css) ([Classless](https://classless.de/) for example) as a base and override it with your own styles.
+The html produced is generic. So, you can style it by adding a style tag or a link to a custom stylesheet in the header. 
+
+You can also use a [minimal css library](https://github.com/dohliam/dropin-minimal-css) ([Classless](https://classless.de/) for example) or [Bootstrap](https://getbootstrap.com/) as a base and override it with your own styles. 
 
 ## References 
 
