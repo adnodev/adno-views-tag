@@ -109,7 +109,7 @@ function adnoList(obj) {
 			const hi = parseInt(region[3]);
 			const wt = (wi < wp) ?  wi : wp ;
 			const ht = (hi < hp) ?  hi : hp;
-			const output = ( wt >= ht ) ? wt + "px," : "," + ht + "px" ;  
+			const output = ( wt >= ht ) ? wt + "," : "," + ht ;  
 			const image = '<img src="' + source + '/' + iiif + '/' + output + '/0/default.jpg" style="object-fit: none;" />';
 			switch(position) {
 				case 'none': html += fig_start + image + fig_end; break;
